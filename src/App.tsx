@@ -5,14 +5,14 @@ function App() {
     <Grid
       templateAreas={{
         base: `"nav" "main"`,
-        lg: `"nav nav" "aside main"`,
+        sm: `"nav nav" "aside main"`,
       }}
     >
       <GridItem area={'nav'} bg={'coral'}>
         Nav
       </GridItem>
 
-      <Show above="lg">
+      <Show above="sm">
         <GridItem area={'aside'} bg={'gold'}>
           Aside
         </GridItem>
