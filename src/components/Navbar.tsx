@@ -1,5 +1,13 @@
+import { HStack, Image } from '@chakra-ui/react';
+import logo from '../assets/logo.webp';
+
 const Navbar = () => {
-  return <h1>hello</h1>;
+  return;
+  <>
+    <HStack>
+      <Image src={logo} />
+    </HStack>
+  </>;
 };
 
 export default Navbar;
