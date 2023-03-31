@@ -10,7 +10,7 @@ interface Props {
 
 const GameCard = ({ game }: Props) => {
   return (
-    <Card borderRadius={10} overflow="hidden">
+    <Card>
       {/* The getCroppedImageUrl function is a custom function that is used to reduce the imageg size */}
       <Image src={getCroppedImageUrl(game.background_image)} />
       <CardBody>
