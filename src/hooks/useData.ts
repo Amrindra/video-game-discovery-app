@@ -8,6 +8,7 @@ interface FetchResponse <T>{
     results: T[];
 }
 
+// useData is a custom hook that is used to fetch api and using generic type so that we can reuse it accross the component
 const useData = <T>(endpoint: string) => {
     const [data, setData] = useState<T[]>([])
     const [error, setError] = useState('')

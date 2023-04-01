@@ -14,7 +14,6 @@ export interface Game {
     metacritic: number
 }
 
-
 const useGames = () => useData<Game>("/games")
 
 export default useGames
