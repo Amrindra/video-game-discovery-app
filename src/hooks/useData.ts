@@ -14,26 +14,25 @@ const useData = <T>(endpoint: string) => {
     const [error, setError] = useState('')
     const [isLoading, setIsLoading] = useState(false)
 
-
     useEffect(() => {
         // It allows us to cancel or abort the request or any requests that take a long time to complete
         const controller = new AbortController()
-
+        
         setIsLoading(true)
         apiClient.get<FetchResponse<T>>(endpoint, {signal: controller.signal})
-            .then(res => {
-                setData(res.data.results); 
-                setIsLoading(false)})
+        .then(res => {
+            setData(res.data.results); 
+            setIsLoading(false)})
             .catch((err) => {
                 if (err instanceof CanceledError) return
                 setError(err.message)
                 setIsLoading(false)
             })
-
-        // This is the cleanr up function to cancel the request
-        return () => controller.abort()
-    }, [])
-
+            
+            // This is the clean up function to cancel the request
+            return () => controller.abort()
+        }, [])
+        
     return {data, error, isLoading}
 }
 
